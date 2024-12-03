@@ -5,6 +5,12 @@ app = Flask(__name__)
 # A simple in-memory structure to store tasks
 tasks = []
 
+app.secret_key = "@09JKD0934jd712?djD"
+
+session["logged_in"] = True
+
+session["username"] = "admin"
+
 @app.route('/', methods=['GET'])
 def home():
     # Display existing tasks and a form to add a new task
