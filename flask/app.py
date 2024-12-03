@@ -7,11 +7,11 @@ tasks = []
 
 app.secret_key = "@09JKD0934jd712?djD"
 
-
-
-
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET','POST'])
 def home():
+    session["logged_in"] = True
+    session["username"] = "admin"
+    
     # Display existing tasks and a form to add a new task
     html = '''
 <!DOCTYPE html>
