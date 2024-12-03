@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template_string
+from flask import Flask, jsonify, request, render_template_string,session
 
 app = Flask(__name__)
 
@@ -10,6 +10,7 @@ app.secret_key = "@09JKD0934jd712?djD"
 session["logged_in"] = True
 
 session["username"] = "admin"
+
 
 @app.route('/', methods=['GET'])
 def home():
